@@ -26,4 +26,4 @@
 * ### Etkinlikler
 
 ### Giriş 
-    Laravel provides a clean, simple API over the popular SwiftMailer library with drivers for SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud based service of your choice.
+Laravel provides a clean, simple API over the popular SwiftMailer library with drivers for SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud based service of your choice.
