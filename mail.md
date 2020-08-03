@@ -1,24 +1,24 @@
 # Mail
 
-* ## Giriş 
+* ### Giriş 
   * ##### Konfigürasyon
   * ##### Sürücü Önkoşulları
-* ## Mail Oluşturma
-* ## Mail Yazma
+* ### Mail Oluşturma
+* ### Mail Yazma
     * ##### Göndereni Yapılandırma
     * ##### Görünümü Yapılandırma
     * ##### Veriyi gör
     * ##### Ekler
     * ##### Satır İçi Ekler
     * ##### SwiftMailer Mesajını Özelleştirme
-* ## Markdown Mailables
+* ### Markdown Mailables
     * ##### Markdown Mailables Oluşturma
     * ##### Markdown Mesajları Yazma
     * ##### Bileşenleri Özelleştirme
-* ## Mail Gönderme
+* ### Mail Gönderme
     * ##### Kuyruk (queue) Postası
-* ## Mail İşleme
+* ### Mail İşleme
     * ##### Tarayıcıda Posta Önizleme
-* ## lokalizasyon Mail
-* ## Posta ve Yerel Kalkınma
-* ## Etkinlikler
+* ### lokalizasyon Mail
+* ### Posta ve Yerel Kalkınma
+* ### Etkinlikler
