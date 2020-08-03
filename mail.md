@@ -13,9 +13,9 @@
     * ##### Ekler
     * ##### Satır İçi Ekler
     * ##### SwiftMailer Mesajını Özelleştirme
-* ### Markdown Mailables
-    * ##### Markdown Mailables Oluşturma
-    * ##### Markdown Mesajları Yazma
+* ### İşaretli Mail 
+    * ##### İşaretli Mail Oluşturma
+    * ##### İşaretli Mesajları Yazma
     * ##### Bileşenleri Özelleştirme
 * ### Mail Gönderme
     * ##### Kuyruk (queue) Postası
@@ -26,4 +26,8 @@
 * ### Etkinlikler
 
 ### Giriş 
-Laravel provides a clean, simple API over the popular SwiftMailer library with drivers for SMTP, Mailgun, Postmark, Amazon SES, and sendmail, allowing you to quickly get started sending mail through a local or cloud based service of your choice.
+Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden SMTP, Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
+
+##### Konfigürasyon 
+Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
+    > config/mail.php
