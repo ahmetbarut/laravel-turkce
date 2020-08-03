@@ -33,6 +33,48 @@ Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
 
 ###### varsayılan mail ayarları
 > config/mail.php
-```php 
-'default' => env('MAIL_MAILER', 'smtp')
+Dosyasında ayarlar varsayılan olarak eklenmiştir. Kullandığınız mail servisine göre düzenleme yapmalısınız. 
+```php
+'mailers' => [
+        // ...
+    ]
 ```
+içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan olarak _smtp_ geliyor.
+
+> Desteklenen protokoller
+* smtp 
+* sendmail 
+* mailgun 
+* ses 
+* postmark 
+* log 
+* array
+
+Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
+
+```environment
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS=null
+    MAIL_FROM_NAME="${APP_NAME}"
+```
+* MAIL_MAILER
+    * Mail sürücüsünü belirtiyoruz
+* MAIL_HOST
+    * Kullandığımız mail servisinin hostu. Eğer gmail kullanacaksanız _smtp.gmail.com_ olarak değiştirin 
+* MAIL_PORT
+    * Mail portu smtp'de 587 veya 493
+* MAIL_USERNAME
+    * e-posta adresiniz
+* MAIL_PASSWORD
+    * e-posta adresinizin parolası
+* MAIL_ENCRYPTION
+    * ssl veya tls 
+* MAIL_FROM_ADDRESS
+    * e-posta adresiniz gönderildiğinde gösterilecek adres
+* MAIL_FROM_NAME
+    * e-posta adresiniz gönderildiğinde gösterilecek isim
