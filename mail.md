@@ -1,5 +1,5 @@
 # Mail
 
 * ## Giriş 
-  *  ### Konfigürasyon
-  *  ### Sürücü Önkoşulları
+  *  ##### Konfigürasyon
+  *  ##### Sürücü Önkoşulları
