@@ -30,4 +30,5 @@ Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introducti
 
 ##### Konfigürasyon 
 Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
-    > config/mail.php
+    config/mail.php
+    > defult
