@@ -42,6 +42,7 @@ Dosyasında ayarlar varsayılan olarak eklenmiştir. Kullandığınız mail serv
 içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan olarak _smtp_ geliyor.
 
 > Desteklenen protokoller
+```
 * smtp 
 * sendmail 
 * mailgun 
@@ -49,6 +50,8 @@ içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan ola
 * postmark 
 * log 
 * array
+
+```
 
 Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 
