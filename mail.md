@@ -219,5 +219,8 @@ Merhaba {{$alici_ismi}},
 
 Mesajınız : {{$mesaj}}
 ```
-#####  
-<p align="center">![Örnek 1](fotograflar/mail_ornek.png)</p>
+#### Sonuç  
+
+![Örnek 1](fotograflar/mail_ornek.png)
+
+#### 
