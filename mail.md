@@ -129,8 +129,8 @@ Posta gönderme sınıfı oluşturmak için aşşağıdaki komutunu çalıştır
 ```
 > Ben örnek için ```YeniGonderi``` diye isimlendirdim.
 
-[Mail Yazma](#mail-yazma-1)
-E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build fonksiyonu```'nda yapılır.
+### [Mail Yazma](#mail-yazma-1)
+E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build()``` fonksiyonu'nda yapılır.
 ```php
    /**
      * Build the message.
@@ -142,5 +142,17 @@ E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build fo
         return $this->view('view.name');
     }
 ```
-Laravelde posta gönderme işlemlerinde html dosyası gönderilir. Kullancıya göndermek istediğiniz herşeyi oraya yazılır. Örnek vererek göstereyim.
-```resources/views/``` _mail_ diye bir dizin oluşturup içinde ```yeni_gonderi.blade.php``` dosyası oluşturacağım
+Laravelde posta gönderme işlemlerinde html dosyası gönderilir. Kullancıya göndermek istediğiniz herşey oraya yazılır. Örnek göstererek açıklamaya çalışacağım.
+
+```resources/views/``` _mail_ diye bir dizin oluşturup içinde ```yeni_gonderi.blade.php``` dosyası oluşturacağım.
+
+```php php artisan make:controller GonderiController``` diye bir controller oluşturacağım.
+Sadece örnek göstermek amacıyla controllerde herşeyi statik yapacağım mantığı göstermek amacıyla.
+
+> app/Http/Controllers/GonderiController.php 
+dosyasına 
+> use App\Mail\YeniGonderi; 
+> use Illuminate\Support\Facades\Mail;
+```App\Mail\YeniGonderi``` bizim posta göndermemiz için kullandığımız sınıf.
+```Illuminate\Support\Facades\Mail``` postayı kime göndereceğimizi ve göndermemiz için kullanılan sınıf.
+bunları dahil ediyorum
