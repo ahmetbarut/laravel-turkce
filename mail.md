@@ -155,6 +155,5 @@ Sadece örnek göstermek amacıyla controllerde herşeyi statik yapacağım mant
  use Illuminate\Support\Facades\Mail;
 ```
 ```App\Mail\YeniGonderi``` benim posta göndermem için kullandığım sınıf.
-## 
 ```Illuminate\Support\Facades\Mail``` postayı kime göndereceğimizi ve göndermemiz için kullanılan sınıf.
 bunları dahil ediyorum
