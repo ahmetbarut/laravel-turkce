@@ -81,12 +81,12 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 
 ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
 Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen [Guzzle HTTP](http://docs.guzzlephp.org/en/stable/) kütüphanesini gerektirir.
-[Guzzle](#guzzleHTTP-1)
+
 ```php 
     composer require guzzlehttp/guzzle
 ```
 #### Mailgun Sürücüsü
-Mailgun sürücüsünü kullanmak için önce [Guzzle](#guzzleHTTP-1)'ı yükleyin, ardından ```config/mail.php``` yapılandırma dosyanızdaki varsayılan seçeneği mailgun olarak ayarlayın. Ardından, ```config/services.php``` yapılandırma dosyanızın aşağıdaki seçenekleri içerdiğini doğrulayın:
+Mailgun sürücüsünü kullanmak için önce [Guzzle](http://docs.guzzlephp.org/en/stable/)'ı yükleyin, ardından ```config/mail.php``` yapılandırma dosyanızdaki varsayılan seçeneği mailgun olarak ayarlayın. Ardından, ```config/services.php``` yapılandırma dosyanızın aşağıdaki seçenekleri içerdiğini doğrulayın:
 
 ```php 
 'mailgun' => [
@@ -95,7 +95,7 @@ Mailgun sürücüsünü kullanmak için önce [Guzzle](#guzzleHTTP-1)'ı yükley
     'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 ```
-Bu şekilde olup _.env_ dosyanızda
+Bu şekilde olup _.env_ dosyanızda düzenlemeleri size verildiği gibi doldurun
 ```environment
     MAIL_MAILER=mailgun
     MAIL_HOST=smtp.mailgun.org
@@ -104,7 +104,17 @@ Bu şekilde olup _.env_ dosyanızda
     MAILGUN_DOMAIN=subdomain.domain.com
     MAILGUN_SECRET=mailgun-api-key
 ```
-
+* MAIL_MAILER=mailgun
+    * Mail protokolünü belirtiyoruz.
+* MAIL_HOST=smtp.mailgun.org
+    * Kullandığımız mail servisinin hostu.
+* MAIL_FROM_ADDRESS=ornek_eposta@domain.com
+    * mailgun'de başvuru yaptığınız e-posta adresiniz
+* MAILGUN_DOMAIN=subdomain.domain.com
+    *   mailgun subdomain kullanmanızı tavsiye ediyor [mailgun döküman](https://documentation.mailgun.com/en/latest/)
+* MAILGUN_SECRET=mailgun-api-key
+    * mailgun tarafından size sunulan api-secret-key (anahtarı)
+    Mailgun konfigürasyonu bu kadar.
 #### Postmark Sürücüsü 
     Postmark henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
 
