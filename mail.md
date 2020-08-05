@@ -26,7 +26,7 @@
 * ### Etkinlikler
 
 ### [Giriş](#giriş-1) 
-Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden SMTP, Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
+Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden [SMTP](https://tr.wikipedia.org/wiki/SMTP), Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
 
 #### [Konfigürasyon](#konfigürasyon-1) 
 Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
@@ -80,3 +80,5 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
     * e-posta adresiniz gönderildiğinde gösterilecek isim
 
 ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
+Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen Guzzle HTTP kütüphanesini gerektirir.
+```bash composer require guzzlehttp/guzzle```
