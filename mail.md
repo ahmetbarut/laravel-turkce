@@ -81,4 +81,6 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 
 ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
 Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen Guzzle HTTP kütüphanesini gerektirir.
-```bash composer require guzzlehttp/guzzle```
+```php 
+    composer require guzzlehttp/guzzle
+```
