@@ -188,8 +188,9 @@ class YeniGonderi extends Mailable
     public function build()
     {
         return $this
-                ->from("ahmetbarut.net")
+                ->from("gonderici_mail@domain.com") // hangi mail olduğunu belirtmeniz gerekli 
                 ->view('mail.yeni_gonderi');
+                // view dosyası gönderilir
     }
 }
 ```
@@ -218,3 +219,4 @@ Merhaba {{$alici_ismi}},
 
 Mesajınız : {{$mesaj}}
 ```
+[Örnek 1](fotograflar/mail_ornek.png)
