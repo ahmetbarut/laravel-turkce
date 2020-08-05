@@ -5,7 +5,7 @@
 * ### [Giriş](#giriş-1) 
   * ##### [Konfigürasyon](#konfigürasyon-1)
   * ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
-* ### Mail Oluşturma
+* ### [Mail Oluşturma](#mail-oluşturma-1)
 * ### Mail Yazma
     * ##### Göndereni Yapılandırma
     * ##### Görünümü Yapılandırma
@@ -80,7 +80,41 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
     * e-posta adresiniz gönderildiğinde gösterilecek isim
 
 ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
-Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen Guzzle HTTP kütüphanesini gerektirir.
+Mailgun ve Postmark gibi API tabanlı sürücüler genellikle SMTP sunucularından daha basit ve daha hızlıdır. Mümkünse, bu sürücülerden birini kullanmalısınız. Tüm API sürücüleri, Composer paket yöneticisi aracılığıyla kurulabilen [Guzzle HTTP](http://docs.guzzlephp.org/en/stable/) kütüphanesini gerektirir.
+[Guzzle](#guzzleHTTP-1)
 ```php 
     composer require guzzlehttp/guzzle
 ```
+#### Mailgun Sürücüsü
+Mailgun sürücüsünü kullanmak için önce [Guzzle](#guzzleHTTP-1)'ı yükleyin, ardından ```config/mail.php``` yapılandırma dosyanızdaki varsayılan seçeneği mailgun olarak ayarlayın. Ardından, ```config/services.php``` yapılandırma dosyanızın aşağıdaki seçenekleri içerdiğini doğrulayın:
+
+```php 
+'mailgun' => [
+    'domain' => env('MAILGUN_DOMAIN'),
+    'secret' => env('MAILGUN_SECRET'),
+    'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+    ],
+```
+Bu şekilde olup _.env_ dosyanızda
+```environment
+    MAIL_MAILER=mailgun
+    MAIL_HOST=smtp.mailgun.org
+    MAIL_PORT=587
+    MAIL_FROM_ADDRESS=ornek_eposta@domain.com
+    MAILGUN_DOMAIN=subdomain.domain.com
+    MAILGUN_SECRET=mailgun-api-key
+```
+
+#### Postmark Sürücüsü 
+    Postmark henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
+
+#### Amazon SES Sürücüsü 
+    Amazon SES henüz test edilmediği için eklenmedi ilerleyen zamanlarda güncellenecektir.
+
+### [Mail Oluşturma](#mail-oluşturma-1)
+Laravel'de kullandığınız servis tarafından her türlü e-posta gönderilebilir. Laravel posta gönderme sınıfları ```app/Mail``` dizininde bulunur.
+Posta gönderme sınıfı oluşturmak için aşşağıdaki komutunu çalıştırıyoruz.
+```php
+    php artisan make:mail YeniGonderi
+```
+> Ben örnek için ```YeniGonderi``` diye isimlendirdim.
