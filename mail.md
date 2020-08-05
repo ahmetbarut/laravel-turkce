@@ -146,13 +146,14 @@ Laravelde posta gönderme işlemlerinde html dosyası gönderilir. Kullancıya g
 
 ```resources/views/``` _mail_ diye bir dizin oluşturup içinde ```yeni_gonderi.blade.php``` dosyası oluşturacağım.
 
-```php php artisan make:controller GonderiController``` diye bir controller oluşturacağım.
+```php artisan make:controller GonderiController``` diye bir controller oluşturacağım.
 Sadece örnek göstermek amacıyla controllerde herşeyi statik yapacağım mantığı göstermek amacıyla.
 
-> app/Http/Controllers/GonderiController.php 
-dosyasına 
-> use App\Mail\YeniGonderi; 
-> use Illuminate\Support\Facades\Mail;
+```app/Http/Controllers/GonderiController.php     dosyasına```
+```php
+ use App\Mail\YeniGonderi; 
+ use Illuminate\Support\Facades\Mail;
+```
 ```App\Mail\YeniGonderi``` bizim posta göndermemiz için kullandığımız sınıf.
 ```Illuminate\Support\Facades\Mail``` postayı kime göndereceğimizi ve göndermemiz için kullanılan sınıf.
 bunları dahil ediyorum
