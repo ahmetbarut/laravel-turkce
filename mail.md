@@ -3,7 +3,7 @@
 # Mail
 
 * ### [Giriş](#giriş) 
-  * ##### [Konfigürasyon](#konfigürasyon)
+  * ##### [Konfigürasyon](#konfigürasyon-1)
   * ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
 * ### Mail Oluşturma
 * ### Mail Yazma
@@ -25,10 +25,10 @@
 * ### Posta ve Yerel Kalkınma
 * ### Etkinlikler
 
-### [Giriş](#giriş) 
+### [Giriş](#giriş-1) 
 Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden SMTP, Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
 
-##### Konfigürasyon 
+##### [Konfigürasyon](#konfigürasyon-1) 
 Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
 
 ###### varsayılan mail ayarları
