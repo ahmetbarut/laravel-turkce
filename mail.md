@@ -25,7 +25,7 @@
 * ### Posta ve Yerel Kalkınma
 * ### Etkinlikler
 
-### Giriş 
+### [Giriş](#Giriş) 
 Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden SMTP, Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
 
 ##### Konfigürasyon 
@@ -42,7 +42,6 @@ Dosyasında ayarlar varsayılan olarak eklenmiştir. Kullandığınız mail serv
 içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan olarak _smtp_ geliyor.
 
 > Desteklenen protokoller
-```
 * smtp 
 * sendmail 
 * mailgun 
@@ -50,8 +49,6 @@ içinden kullandığınız protokole göre düzenlenmesi gerekir varsayılan ola
 * postmark 
 * log 
 * array
-
-```
 
 Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 
@@ -66,7 +63,7 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
     MAIL_FROM_NAME="${APP_NAME}"
 ```
 * MAIL_MAILER
-    * Mail sürücüsünü belirtiyoruz
+    * Mail protokolünü belirtiyoruz
 * MAIL_HOST
     * Kullandığımız mail servisinin hostu. Eğer gmail kullanacaksanız _smtp.gmail.com_ olarak değiştirin 
 * MAIL_PORT
@@ -81,3 +78,5 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
     * e-posta adresiniz gönderildiğinde gösterilecek adres
 * MAIL_FROM_NAME
     * e-posta adresiniz gönderildiğinde gösterilecek isim
+
+##### [Sürücü Önkoşulları](#Sürücü-Önkoşulları)
