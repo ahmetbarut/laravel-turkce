@@ -4,7 +4,7 @@
 
 * ### Giriş 
   * ##### Konfigürasyon
-  * ##### Sürücü Önkoşulları
+  * ##### Sürücü Önkoşulları(#sürücü-önkoşulları-1)
 * ### Mail Oluşturma
 * ### Mail Yazma
     * ##### Göndereni Yapılandırma
@@ -79,4 +79,4 @@ Ana dizinde bulunan _.env_ dosyası içinden kendinize göre ayarlayabilirsiniz
 * MAIL_FROM_NAME
     * e-posta adresiniz gönderildiğinde gösterilecek isim
 
-##### [Sürücü Önkoşulları](#sürücü-önkoşulları)
+##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
