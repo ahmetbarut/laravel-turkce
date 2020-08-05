@@ -6,7 +6,7 @@
   * ##### [Konfigürasyon](#konfigürasyon-1)
   * ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
 * ### [Mail Oluşturma](#mail-oluşturma-1)
-* ### Mail Yazma
+* ### [Mail Yazma](#mail-yazma-1)
     * ##### Göndereni Yapılandırma
     * ##### Görünümü Yapılandırma
     * ##### Veriyi gör
@@ -128,3 +128,19 @@ Posta gönderme sınıfı oluşturmak için aşşağıdaki komutunu çalıştır
     php artisan make:mail YeniGonderi
 ```
 > Ben örnek için ```YeniGonderi``` diye isimlendirdim.
+
+[Mail Yazma](#mail-yazma-1)
+E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build fonksiyonu```'nda yapılır.
+```php
+   /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->view('view.name');
+    }
+```
+Laravelde posta gönderme işlemlerinde html dosyası gönderilir. Kullancıya göndermek istediğiniz herşeyi oraya yazılır. Örnek vererek göstereyim.
+```resources/views/``` _mail_ diye bir dizin oluşturup içinde ```yeni_gonderi.blade.php``` dosyası oluşturacağım
