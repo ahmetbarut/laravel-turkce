@@ -9,8 +9,9 @@
 * ### [Mail Oluşturma](#mail-oluşturma-1)
 * ### [Mail Yazma](#mail-yazma-1)
     * ##### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
-    * ##### Görünümü Yapılandırma
-    * ##### Veriyi gör
+    * ##### [Görünümü Yapılandırma](#gorunumu-yapilandirma-1)
+    * ##### [Düz Metin E-postaları](#duz-metin-e-postalari-1)
+    * ##### [Veriyi gör](#veriyi-gor-1)
     * ##### Ekler
     * ##### Satır İçi Ekler
     * ##### SwiftMailer Mesajını Özelleştirme
@@ -146,4 +147,182 @@ E-posta gönderme işlemleri, yapılandırma derleme gibi işlemler  ```build()`
 > [Basit bir örnek](/mail_ornek.md) 
 
 ### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
+Öncelikle e-posta kimin tarafından gönderileceğini yapılandıralım. Göndereni yapılandırmanın iki yolu vardır.
 
+##### 1. Yolu
+```build``` fonksiyonu, ```Mailable``` sınıfına ait olan ```from``` fonksiyonu. Fonksiyon 2 parametre alır 1. si zorunlu ```$address``` 2. parametre ```$name``` varsayılan ```null``` 
+
+```php 
+/**
+ * Build the message.
+ *
+ * @return $this
+ */
+public function build()
+{
+    return $this->from('example@example.com',)
+                ->view('emails.orders.shipped');
+}
+```
+
+##### 2. Yolu
+Eğer sadece 1 tane e-posta adresi kullanacaksanız 2. yol önerilir bu tüm ```Mailable``` sınıflarında kullanılır yani siz yeni bir ```Mailable``` oluşturdunuz orda göndereni belirtmenize gerek yoktur. 
+###### Yapılandırma 
+```config/mail.php``` dosyasını açıp
+```php
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', 'ornek@ornek.com'),
+        'name' => env('MAIL_FROM_NAME', 'ornek'),
+    ],
+```
+veya ```.env``` dosyasındanda düzenleyebilirsiniz.
+
+```environment
+MAIL_FROM_ADDRESS=ornek@ornek.com
+MAIL_FROM_NAME="ornek isim"
+```
+Bunlara ek olarak ```config/mail.php``` "yanıt adresi" de belirleyebilirsiniz 
+```php 
+    'reply_to' => ['address' => 'ornek@ornek.com', 'name'    => 'isim'
+    ],
+```
+#### [Görünümü Yapılandırma](#gorunumu-yapilandirma-1)
+```Mailable``` sınıfında ```build``` fonksiyonu içinde e-postanın içeriğini işlerken hangi şablonun kullanılması gerektiğini belirtmek için ```view``` fonksiyonunu kullanabilirsiniz. Burda istediğiniz gibi stil tasarım yapabilirsiniz bunda özgürsünüz.
+```php
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->view('email.mail_sayfasi');
+    }
+```
+#### [Düz Metin E-postaları](#duz-metin-e-postalari-1)
+E-postanızda düz metinde gönderebilirsiniz. Bunu da 
+```php
+    /**
+     * Build the message.
+     *
+     * @return $this
+     */
+    public function build()
+    {
+        return $this->text('email.duz_yazi_sayfasi');
+    }
+```
+#### [Veriyi gör](#veriyi-gor-1)
+Bu bölümde e-posta gönderirken şablona nasıl gönderilir onu gösterecem.
+```php 
+    public
+``` 
+olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur onlar direkt şablonda kullanılabilir.
+```php
+<?php
+    namespace App\Mail;
+
+    use App\Gonderi;
+    use Illuminate\Bus\Queueable;
+    use Illuminate\Contracts\Queue\ShouldQueue;
+    use Illuminate\Mail\Mailable;
+    use Illuminate\Queue\SerializesModels;
+
+    class YeniGonderi extends Mailable
+    {
+        use Queueable, SerializesModels;
+
+
+
+        public $gonderi;
+
+        /**
+        *  Yeni bir mesaj oluşturmak
+        *  @param App\Gonderi $gonderi
+        *  @return void
+        */
+
+        public function __construct(Gonderi $gonderi)
+        {
+            $this->gonderi = $gonderi;
+        }
+
+        /**
+        *  Mesaj derleme
+        *  @return $this
+        */
+        public function build()
+        {
+            return $this
+                    ->view('mail.yeni_gonderi');
+        }
+    }
+```
+```$gonderi```, halka açık(public) olduğu için şablona otomatik olarak gider herhangi birşey yapmanıza gerek yok.
+```php
+    <div style="margin:20px">
+        <h5 style="text-align:center">
+            {{ $gonderi->baslik }}
+        </h5>
+        <p style="padding:8px">
+            {{ $gonderi->icerik }}
+        </p>
+    </div>
+```
+##### with fonksiyonuyla veri göndermek
+```with``` yöntemiyle, ```korumalı(protected), özel(private)``` olan verileri gönderilmesi önerilir.
+
+```php
+    <?php
+
+    namespace App\Mail;
+
+    use App\Gonderi;
+    use Illuminate\Bus\Queueable;
+    use Illuminate\Contracts\Queue\ShouldQueue;
+    use Illuminate\Mail\Mailable;
+    use Illuminate\Queue\SerializesModels;
+
+    class YeniGonderi extends Mailable
+    {
+        use Queueable, SerializesModels;
+
+
+
+        protected $gonderi;
+
+        /**
+        *  Yeni bir mesaj oluşturmak
+        *  @param App\Gonderi $gonderi
+        *  @return void
+        */
+
+        public function __construct(Gonderi $gonderi)
+        {
+            $this->gonderi = $gonderi;
+        }
+
+        /**
+        *  Mesaj derleme
+        *  @return $this
+        */
+        public function build()
+        {
+            return $this->view('mail.yeni_gonderi')
+                        ->with([
+                            "baslik" => $this->gonderi->baslik,
+                            "icerik" => $this->gonderi->icerik
+                        ]);
+        }
+    }
+```
+```php
+    <div style="margin:20px">
+        <h5 style="text-align:center">
+            {{ $baslik }}
+        </h5>
+        <p style="padding:8px">
+            {{ $icerik }}
+        </p>
+    </div>
+```
