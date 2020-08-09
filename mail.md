@@ -7,7 +7,7 @@
   * ##### [Sürücü Önkoşulları](#sürücü-önkoşulları-1)
 * ### [Mail Oluşturma](#mail-oluşturma-1)
 * ### [Mail Yazma](#mail-yazma-1)
-    * ##### Göndereni Yapılandırma
+    * ##### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
     * ##### Görünümü Yapılandırma
     * ##### Veriyi gör
     * ##### Ekler
@@ -26,7 +26,7 @@
 * ### Etkinlikler
 
 ### [Giriş](#giriş-1) 
-Laravel, popüler ![SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden [SMTP](https://tr.wikipedia.org/wiki/SMTP), Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
+Laravel, popüler [SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden [SMTP](https://tr.wikipedia.org/wiki/SMTP), Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
 
 #### [Konfigürasyon](#konfigürasyon-1) 
 Laravelin e-posta yapılandırma dosyası config/mail.php dosyasında bulunur.
@@ -224,3 +224,20 @@ Mesajınız : {{$mesaj}}
 ![Örnek 1](fotograflar/mail_ornek.png)
 
 #### 
+### Kullanılan fonksiyonlar
+* view
+* from
+* with
+* subject
+* reply_to
+* text 
+* attach
+* attachFromStorage
+* attachFromStorageDisk
+* attachData
+* withSwiftMessage
+
+### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
+
+
+> [Larvel Mail](https://laravel.com/docs/7.x/mail)
