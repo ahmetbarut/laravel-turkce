@@ -214,9 +214,7 @@ E-postanızda düz metinde gönderebilirsiniz. Bunu da
 ```
 #### [Veriyi gör](#veriyi-gör-1)
 Bu bölümde e-posta gönderirken şablona nasıl gönderilir onu gösterecem.
-```php 
-    public
-``` 
+```public``` 
 olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur onlar direkt şablonda kullanılabilir.
 ```php
 <?php
@@ -365,6 +363,4 @@ E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; anc
         <img src="{{$message->embed($resimDizini)}}">
     </body>
 ```
-<div style="padding:20px;background-color:red;">
-<img src="https://laravel.com/img/callouts/exclamation.min.svg" style="width:80px;height:80px; padding:10px; margin:10px">
-</div>
+<img src="fotograflar/warning.png" style="width:80px;height:80px; padding:10px; margin:10px">
