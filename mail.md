@@ -16,11 +16,6 @@
     * ##### [Satır İçi Ekler](#ekler-2)
 * ### [Mail Gönderme](#mail-gönderme-1)
     * ##### [Kuyruk (queue) Postası](#kuyruk-postsası-1)
-* ### Mail İşleme
-    * ##### Tarayıcıda Posta Önizleme
-* ### lokalizasyon Mail
-* ### Posta ve Yerel Kalkınma
-* ### Etkinlikler
 
 ### [Giriş](#giriş-1) 
 Laravel, popüler [SwiftMailer](https://swiftmailer.symfony.com/docs/introduction.html) kütüphanesi üzerinden [SMTP](https://tr.wikipedia.org/wiki/SMTP), Mailgun, Postmark, Amazon SES ve sendmail sürücülerine sahip temiz ve basit bir API sağlayarak, seçtiğiniz yerel veya bulut tabanlı bir hizmet aracılığıyla hızlı bir şekilde posta göndermeye başlamanıza olanak tanır.
