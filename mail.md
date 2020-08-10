@@ -12,7 +12,7 @@
     * ##### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
     * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
     * ##### [Veriyi gör](#veriyi-gör-1)
-    * ##### [Ekler](#ekler)
+    * ##### [Ekler](#ekler-1)
     * ##### [Satır İçi Ekler](#satır-içi-ekler-1)
     * ##### SwiftMailer Mesajını Özelleştirme
 * ### İşaretli Mail 
@@ -326,7 +326,7 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         </p>
     </div>
 ```
-#### [Ekler](#ekler)
+#### [Ekler](#ekler-1)
 E-postaya ek eklemek için ```Mailable``` sınıfının ```attach``` fonksiyonu kullanılır. ```attach``` fonksiyonu 2 parametre alır ```$file, array $options = []``` 1. parametre dosya yolu (zorunlu), 2. parametreyi bir sonraki bölümde ele alacağım. 
 ```php
 
