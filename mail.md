@@ -365,4 +365,6 @@ E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; anc
         <img src="{{$message->embed($resimDizini)}}">
     </body>
 ```
+<div class="padding:20px;background-color:red;">
 <img src="https://laravel.com/img/callouts/exclamation.min.svg" style="width:80px;height:80px; padding:10px; margin:10px">
+</div>
