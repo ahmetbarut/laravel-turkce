@@ -11,7 +11,7 @@
     * ##### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
     * ##### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
     * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
-    * ##### [Veriyi gör](#veriyi-gor-1)
+    * ##### [Veriyi gör](#veriyi-gör-1)
     * ##### Ekler
     * ##### Satır İçi Ekler
     * ##### SwiftMailer Mesajını Özelleştirme
@@ -212,7 +212,7 @@ E-postanızda düz metinde gönderebilirsiniz. Bunu da
         return $this->text('email.duz_yazi_sayfasi');
     }
 ```
-#### [Veriyi gör](#veriyi-gor-1)
+#### [Veriyi gör](#veriyi-gör-1)
 Bu bölümde e-posta gönderirken şablona nasıl gönderilir onu gösterecem.
 ```php 
     public
