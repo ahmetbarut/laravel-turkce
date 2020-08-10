@@ -13,7 +13,7 @@
     * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
     * ##### [Veriyi gör](#veriyi-gör-1)
     * ##### [Ekler](#ekler-1)
-    * ##### [Satır İçi Ekler](#satır-içi-ekler-1)
+    * ##### [Satır İçi Ekler](#ekler-2)
     * ##### SwiftMailer Mesajını Özelleştirme
 * ### İşaretli Mail 
     * ##### İşaretli Mail Oluşturma
@@ -357,7 +357,7 @@ Bir dosya gönderirken dosya adı ve MIME tipi belirtebilirsiniz. Bu 2. parametr
     }
 }
 ```
-### [Satır İçi Ekler](#satır-içi-ekler-1)
+### [Satır İçi Ekler](#ekler-2)
 E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; ancak Laravel, e-postalarınıza resim eklemek ve uygun CID'yi almak için uygun bir yol sağlar. Satır içi bir görüntüyü ekleme için, e-posta şablonunuzdaki ```$message``` değişkenindeki embed yöntemini kullanın. Laravel, ```$message``` değişkenini otomatik olarak tüm e-posta şablonlarınız için kullanılabilir hale getirir, böylece manuel olarak geçirme konusunda endişelenmenize gerek kalmaz:
 ```php
     <body>
