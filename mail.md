@@ -12,8 +12,8 @@
     * ##### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
     * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
     * ##### [Veriyi gör](#veriyi-gör-1)
-    * ##### Ekler
-    * ##### Satır İçi Ekler
+    * ##### [Ekler](#ekler)
+    * ##### [Satır İçi Ekler](#satır-içi-ekler-1)
     * ##### SwiftMailer Mesajını Özelleştirme
 * ### İşaretli Mail 
     * ##### İşaretli Mail Oluşturma
@@ -326,3 +326,43 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
         </p>
     </div>
 ```
+#### [Ekler](#ekler)
+E-postaya ek eklemek için ```Mailable``` sınıfının ```attach``` fonksiyonu kullanılır. ```attach``` fonksiyonu 2 parametre alır ```$file, array $options = []``` 1. parametre dosya yolu (zorunlu), 2. parametreyi bir sonraki bölümde ele alacağım. 
+```php
+
+    /**
+     *  Mesaj derleme
+     *  @return $this
+     */
+    public function build()
+    {
+        return $this->view('mail.yeni_gonderi')
+                    ->attach( public_path("ekler") ."/ornek.jpg");
+    }
+```
+>Ben kendim özel olarak dizin belirttim. 
+Bir dosya gönderirken dosya adı ve MIME tipi belirtebilirsiniz. Bu 2. parametredir. 
+```php 
+    /**
+     *  Mesaj derleme
+     *  @return $this
+     */
+    public function build()
+    {
+        return $this->view('mail.yeni_gonderi')
+                    ->attach( public_path("ekler") ."/ornek.jpg", [
+                        "as" => "deneme.jpg",
+                        "mime" => "image/jpg"
+                    ]);
+    }
+}
+```
+### [Satır İçi Ekler](#satır-içi-ekler-1)
+E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; ancak Laravel, e-postalarınıza resim eklemek ve uygun CID'yi almak için uygun bir yol sağlar. Satır içi bir görüntüyü ekleme için, e-posta şablonunuzdaki ```$message``` değişkenindeki embed yöntemini kullanın. Laravel, ```$message``` değişkenini otomatik olarak tüm e-posta şablonlarınız için kullanılabilir hale getirir, böylece manuel olarak geçirme konusunda endişelenmenize gerek kalmaz:
+```php
+    <body>
+        Fotoğraf burda
+        <img src="{{$message->embed($resimDizini)}}">
+    </body>
+```
+<img src="https://laravel.com/img/callouts/exclamation.min.svg" style="width:80px;height:80px; padding:10px; margin:10px">
