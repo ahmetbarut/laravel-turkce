@@ -9,8 +9,8 @@
 * ### [Mail Oluşturma](#mail-oluşturma-1)
 * ### [Mail Yazma](#mail-yazma-1)
     * ##### [Göndereni Yapılandırma](#göndereni-Yapılandırma-1)
-    * ##### [Görünümü Yapılandırma](#gorunumu-yapilandirma-1)
-    * ##### [Düz Metin E-postaları](#duz-metin-e-postalari-1)
+    * ##### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
+    * ##### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
     * ##### [Veriyi gör](#veriyi-gor-1)
     * ##### Ekler
     * ##### Satır İçi Ekler
@@ -186,7 +186,7 @@ Bunlara ek olarak ```config/mail.php``` "yanıt adresi" de belirleyebilirsiniz
     'reply_to' => ['address' => 'ornek@ornek.com', 'name'    => 'isim'
     ],
 ```
-#### [Görünümü Yapılandırma](#gorunumu-yapilandirma-1)
+#### [Görünümü Yapılandırma](#görünümü-yapılandırma-1)
 ```Mailable``` sınıfında ```build``` fonksiyonu içinde e-postanın içeriğini işlerken hangi şablonun kullanılması gerektiğini belirtmek için ```view``` fonksiyonunu kullanabilirsiniz. Burda istediğiniz gibi stil tasarım yapabilirsiniz bunda özgürsünüz.
 ```php
     /**
@@ -199,7 +199,7 @@ Bunlara ek olarak ```config/mail.php``` "yanıt adresi" de belirleyebilirsiniz
         return $this->view('email.mail_sayfasi');
     }
 ```
-#### [Düz Metin E-postaları](#duz-metin-e-postalari-1)
+#### [Düz Metin E-postaları](#düz-metin-e-postaları-1)
 E-postanızda düz metinde gönderebilirsiniz. Bunu da 
 ```php
     /**
@@ -270,7 +270,7 @@ olarak tanımlanan veriler ```build``` fonksiyonunda işlenmesine gerek yoktur o
     </div>
 ```
 ##### with fonksiyonuyla veri göndermek
-```with``` yöntemiyle, ```korumalı(protected), özel(private)``` olan verileri gönderilmesi önerilir.
+```with``` yöntemiyle, ```korumalı(protected), özel(private)``` olan veriler gönderilir.
 
 ```php
     <?php
