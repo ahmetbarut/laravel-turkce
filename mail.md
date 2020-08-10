@@ -363,6 +363,4 @@ E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; anc
         <img src="{{$message->embed($resimDizini)}}">
     </body>
 ```
-<div style="float:left">
-<img src="fotograflar/warning.png" style="margin:20px;" width="100px" height="100px"> <p>```$message``` değişkeni otomatik olarak tanımlı kendiniz tanımlamanıza gerek yoktur.</p>
-</div>
+<img src="fotograflar/warning.png" style="margin:20px;" width="100px" height="100px"/> ```$message``` değişkeni otomatik olarak tanımlı kendiniz tanımlamanıza gerek yoktur.
