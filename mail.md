@@ -14,13 +14,8 @@
     * ##### [Veriyi gör](#veriyi-gör-1)
     * ##### [Ekler](#ekler-1)
     * ##### [Satır İçi Ekler](#ekler-2)
-    * ##### SwiftMailer Mesajını Özelleştirme
-* ### İşaretli Mail 
-    * ##### İşaretli Mail Oluşturma
-    * ##### İşaretli Mesajları Yazma
-    * ##### Bileşenleri Özelleştirme
-* ### Mail Gönderme
-    * ##### Kuyruk (queue) Postası
+* ### [Mail Gönderme](#mail-gönderme-1)
+    * ##### [Kuyruk (queue) Postası](#kuyruk-postsası-1)
 * ### Mail İşleme
     * ##### Tarayıcıda Posta Önizleme
 * ### lokalizasyon Mail
@@ -364,3 +359,36 @@ E-postalarınıza satır içi resimler yerleştirmek genellikle zahmetlidir; anc
     </body>
 ```
 <img src="fotograflar/warning.png" style="margin:20px;" width="100px" height="100px"/> ```$message``` değişkeni otomatik olarak tanımlı kendiniz tanımlamanıza gerek yoktur.
+
+### [Mail Gönderme](#mail-gönderme-1)
+Bir mesaj göndermek için ```Mail``` sınıfının ```to``` fonksiyonunu kullanın, ```send``` fonksiyonu bir sınıf kabul eder. 
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Mail\YeniGonderi;
+use Gonderi;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+
+class GonderiController extends Controller
+{
+    public function index(Request $request,$gonderi_id)
+    {
+        $gonderi = Gonderi::findOrFail($gonderi_id);
+
+        // işlemler
+
+        Mail::to($request->user()->mail)->send(new YeniGonderi($gonderi));
+    }
+}
+```
+#### [Kuyruk (queue) Postası](#kuyruk-postsası-1)
+E-posta gönderme işlemleri çok uzayabildiğinden, dolayı çoğu geliştirici e-postaları arkaplanda sıraya almayı tercih eder. Laravel'de [kuyruk(queue)](https://laravel.com/docs/7.x/queues) API'sini kullanarak bunu kolaylaştırır. E-posta alıcılarını ve mesajı belirledikten sonra Mail cephesinde kuyruk cephesi belirlenir.
+```php
+Mail::to($request->user()->mail)
+    ->queue(new OrderShipped($gonderi));
+```
+
+# Devamı için yukarda belirttiğim kaynağa göz atın
